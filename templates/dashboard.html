@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factory Dashboard</title>
+</head>
+
+<body>
+
+<h2>Today's Production Tasks</h2>
+
+<table border="1">
+
+<tr>
+<th>Order</th>
+<th>Process</th>
+<th>Status</th>
+</tr>
+
+{% for task in tasks %}
+
+<tr>
+<td>{{ task.order_id }}</td>
+<td>{{ task.process }}</td>
+<td>{{ task.status }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
