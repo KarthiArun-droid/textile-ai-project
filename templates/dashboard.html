@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Factory Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Textile AI Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
 
-<h2>Today's Production Tasks</h2>
+<header>
+<h1>Textile AI Dashboard</h1>
+</header>
 
-<table border="1">
+<nav>
+<a href="/?page=dashboard">Dashboard</a>
+<a href="/?page=production">Production</a>
+<a href="/?page=shipment">Shipment</a>
+<a href="/?page=detection">Defect Detection</a>
+<a href="/?page=assistant">AI Assistant</a>
+<a href="/?page=inspection">Inspection History</a>
+</nav>
 
-<tr>
-<th>Order</th>
-<th>Process</th>
-<th>Status</th>
-</tr>
+<main>
 
-{% for task in tasks %}
+<p>This is a placeholder dashboard page.</p>
 
-<tr>
-<td>{{ task.order_id }}</td>
-<td>{{ task.process }}</td>
-<td>{{ task.status }}</td>
-</tr>
+<canvas id="productionChart"></canvas>
 
-{% endfor %}
+</main>
 
-</table>
+<script>
+const ctx = document.getElementById('productionChart');
+
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['Cutting','Weaving','Dyeing','Packaging'],
+datasets: [{
+label: 'Orders',
+data: [14,11,9,6]
+}]
+}
+});
+</script>
 
 </body>
 </html>

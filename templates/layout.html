@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TextileMind AI</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">
+            TextileMind
+            <span>AI Platform</span>
+        </div>
+    </div>
+
+    <nav class="menu">
+
+        <div class="menu-item active" onclick="showPage('dashboard')">
+            <div class="menu-icon">📊</div>
+            <div class="menu-text">Dashboard</div>
+        </div>
+
+        <div class="menu-item" onclick="showPage('production')">
+            <div class="menu-icon">🏭</div>
+            <div class="menu-text">Production</div>
+        </div>
+
+        <div class="menu-item" onclick="showPage('shipment')">
+            <div class="menu-icon">🚚</div>
+            <div class="menu-text">Shipment</div>
+        </div>
+
+        <div class="menu-item" onclick="showPage('detection')">
+            <div class="menu-icon">🧠</div>
+            <div class="menu-text">AI Detection</div>
+        </div>
+
+        <div class="menu-item" onclick="showPage('assistant')">
+            <div class="menu-icon">🤖</div>
+            <div class="menu-text">AI Assistant</div>
+        </div>
+
+        <div class="menu-item" onclick="showPage('inspection')">
+            <div class="menu-icon">📋</div>
+            <div class="menu-text">Inspection History</div>
+        </div>
+
+        <div class="menu-item" onclick="showPage('profile')">
+            <div class="menu-icon">👤</div>
+            <div class="menu-text">Profile</div>
+        </div>
+
+    </nav>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+    <div id="dashboard" class="page">Dashboard content here</div>
+    <div id="production" class="page" style="display:none;">Production page</div>
+    <div id="shipment" class="page" style="display:none;">Shipment page</div>
+    <div id="detection" class="page" style="display:none;">AI Detection page</div>
+    <div id="assistant" class="page" style="display:none;">AI Assistant page</div>
+    <div id="inspection" class="page" style="display:none;">Inspection History page</div>
+    <div id="profile" class="page" style="display:none;">Profile page</div>
+
+</div>
+
+
+<!-- SCRIPT -->
+<script>
+function showPage(page){
+
+  document.querySelectorAll('.page').forEach(p=>{
+    p.style.display='none'
+  })
+
+  document.getElementById(page).style.display='block'
+
+  document.querySelectorAll('.menu-item').forEach(b=>{
+    b.classList.remove('active')
+  })
+
+  event.currentTarget.classList.add('active')
+}
+</script>
+
+</body>
+</html>

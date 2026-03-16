@@ -1,0 +1,20 @@
+<h2>Fabric Defect Detection</h2>
+
+<canvas id="defectChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('defectChart');
+
+new Chart(ctx,{
+type:'bar',
+data:{
+labels:['Hole','Oil Stain','Color Variation','Broken Yarn'],
+datasets:[{
+label:'Detected Defects',
+data:[3,5,2,4]
+}]
+}
+});
+</script>

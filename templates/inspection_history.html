@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}Inspection History{% endblock %}
+
+{% block content %}
+  <h1>Inspection History</h1>
+  <p>Past inspection logs and results will be shown here.</p>
+{% endblock %}
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Inspection History</h2>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>Machine</th>
+<th>Defect</th>
+</tr>
+
+{% for row in records %}
+<tr>
+<td>{{ row.date }}</td>
+<td>{{ row.machine }}</td>
+<td>{{ row.defect }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
